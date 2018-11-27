@@ -1,0 +1,24 @@
+console.log(window)
+console.log(jQuery)
+console.log('$(images)', $('.images'))
+$(picture1).on('click',function(){
+    console.log(1)
+    $(images).css({
+        transform:'translateX(0)'
+    })
+})
+$(picture2).on('click',function(){
+    $(images).css({
+        transform:'translateX(-300px)'
+    })
+})
+$(picture3).on('click',function(){
+    $(images).css({
+        transform:'translateX(-600px)'
+    })
+})
+$(picture4).on('click',function(){
+    $(images).css({
+        transform:'translateX(-900px)'
+    })
+})
