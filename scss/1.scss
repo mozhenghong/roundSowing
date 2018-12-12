@@ -1,16 +1,19 @@
 .window{
-    border: 10px solid blue;
+    border: 2px solid #b0d7d8;
     width: 300px;
     height: 200px;
     overflow: hidden;
 }
 .images{
-    border: 1px solid red;
     display: flex;
     align-items: flex-start;
+    transition: transform 0.5s
 }
 .buttons{
     button{
         margin: 5px;
+    }
+    .active{
+        background: rgb(0, 255, 242);
     }
 }

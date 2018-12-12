@@ -1,24 +1,26 @@
-console.log(window)
-console.log(jQuery)
-console.log('$(images)', $('.images'))
-$(picture1).on('click',function(){
-    console.log(1)
-    $(images).css({
-        transform:'translateX(0)'
+$(function(){
+    var index = 0
+    var $num = $('.images img')
+    var timeId = null
+    $('.buttons button').click(function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        index = $(this).index();
+        var position = index*(-300)+'px'
+        $('.images').css('transform','translateX('+position+')')
+        
     })
-})
-$(picture2).on('click',function(){
-    $(images).css({
-        transform:'translateX(-300px)'
-    })
-})
-$(picture3).on('click',function(){
-    $(images).css({
-        transform:'translateX(-600px)'
-    })
-})
-$(picture4).on('click',function(){
-    $(images).css({
-        transform:'translateX(-900px)'
+    $('.window').hover(function(){
+        if(timeId){
+            clearInterval(timeId)
+        }
+    },function(){
+         timeId = setInterval(function(){
+            position = index*(-300)+'px'
+            $('.images').css('transform','translateX('+position+')')
+            index++
+            if(index===$num.length){
+                index =0
+            }
+        },2000)
     })
 })
