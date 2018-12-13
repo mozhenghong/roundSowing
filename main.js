@@ -17,6 +17,7 @@ $(function(){
          timeId = setInterval(function(){
             position = index*(-300)+'px'
             $('.images').css('transform','translateX('+position+')')
+            $('.buttons button').eq(index).addClass('active').siblings().removeClass('active')
             index++
             if(index===$num.length){
                 index =0
