@@ -20,7 +20,7 @@ $(function(){
                 $('.buttons button').eq(index).addClass('active').siblings().removeClass('active')
                 index++
                 if(index===$num.length){
-                    index =1
+                    index =0
                 }
             },2000)
          
